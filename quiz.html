@@ -1,405 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Mood Mentor AI Assistant</title>
+<title>Your Ved AI</title>
 
 <style>
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-    background:linear-gradient(135deg,#dff6ff,#eadcff);
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:20px;
+    background:#fff;
+    color:#222;
 }
 
-.quiz-box{
-    background:white;
-    width:100%;
-    max-width:700px;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+.container{
+    width:80%;
+    max-width:900px;
+    margin:40px auto;
 }
 
 h1{
-    text-align:center;
-    color:#4b4b9d;
-    margin-bottom:15px;
+    font-size:48px;
+    font-weight:bold;
+    line-height:1.2;
+    margin-bottom:30px;
 }
 
-.intro{
-    text-align:center;
-    color:#555;
+p{
+    font-size:20px;
+    line-height:1.7;
     margin-bottom:20px;
 }
 
-.question{
-    margin-top:20px;
-    font-size:17px;
-    font-weight:bold;
+.disclaimer{
+    font-style:italic;
+    color:#555;
+    margin-bottom:40px;
 }
 
-.option{
+.form-group{
+    margin-bottom:25px;
+}
+
+label{
     display:block;
-    background:#f2f5ff;
-    padding:12px;
-    margin:8px 0;
-    border-radius:10px;
-    cursor:pointer;
+    font-size:26px;
+    font-weight:bold;
+    margin-bottom:10px;
 }
 
-.option:hover{
-    background:#dbe7ff;
+input,
+textarea,
+select{
+    width:100%;
+    padding:15px;
+    font-size:18px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+textarea{
+    height:150px;
+    resize:vertical;
 }
 
 button{
-
-    width:100%;
-    padding:14px;
-    margin-top:25px;
-    background:#4b4b9d;
+    background:#2563eb;
     color:white;
     border:none;
-    border-radius:10px;
+    padding:15px 30px;
+    border-radius:8px;
     font-size:18px;
     cursor:pointer;
-
 }
 
 button:hover{
-    background:#30306f;
+    background:#1d4ed8;
 }
-
-
-#thankyou{
-
-    display:none;
-    text-align:center;
-    line-height:1.7;
-    color:#444;
-
-}
-
-
 </style>
-
 </head>
-
 
 <body>
 
+<div class="container">
 
-<div class="quiz-box">
-
-
-<div id="quiz">
-
-
-<h1>🧠 Mood Mentor AI Assistant</h1>
-
-
-<p class="intro">
-
-Welcome to <b>Mood Mentor AI Assistant</b> 💙<br>
-
-Test your knowledge about mental wellness, self-care,
-mindfulness and healthy relationships.
-
-</p>
-
-
-
-<div class="question">
-1. Which activity helps reduce stress?
-</div>
-
-<label class="option">
-<input type="radio" name="q1"> Yoga and Meditation
-</label>
-
-<label class="option">
-<input type="radio" name="q1"> Ignoring emotions
-</label>
-
-<label class="option">
-<input type="radio" name="q1"> Staying awake all night
-</label>
-
-<label class="option">
-<input type="radio" name="q1"> Spending time in nature
-</label>
-
-
-
-<div class="question">
-2. What is important for good mental health?
-</div>
-
-<label class="option">
-<input type="radio" name="q2"> Sharing feelings and seeking support
-</label>
-
-<label class="option">
-<input type="radio" name="q2"> Keeping problems inside
-</label>
-
-<label class="option">
-<input type="radio" name="q2"> Avoiding everyone
-</label>
-
-<label class="option">
-<input type="radio" name="q2"> Practicing self-care
-</label>
-
-
-
-<div class="question">
-3. Healthy sleep helps us by:
-</div>
-
-<label class="option">
-<input type="radio" name="q3"> Improving mood and concentration
-</label>
-
-<label class="option">
-<input type="radio" name="q3"> Increasing stress
-</label>
-
-<label class="option">
-<input type="radio" name="q3"> Reducing energy
-</label>
-
-<label class="option">
-<input type="radio" name="q3"> Helping body and mind recover
-</label>
-
-
-
-<div class="question">
-4. Mindfulness helps us to:
-</div>
-
-<label class="option">
-<input type="radio" name="q4"> Stay calm and focused
-</label>
-
-<label class="option">
-<input type="radio" name="q4"> Increase worries
-</label>
-
-<label class="option">
-<input type="radio" name="q4"> Avoid responsibilities
-</label>
-
-<label class="option">
-<input type="radio" name="q4"> Understand the present moment
-</label>
-
-
-
-<div class="question">
-5. A healthy relationship requires:
-</div>
-
-<label class="option">
-<input type="radio" name="q5"> Trust and communication
-</label>
-
-<label class="option">
-<input type="radio" name="q5"> Anger and blame
-</label>
-
-<label class="option">
-<input type="radio" name="q5"> Lack of respect
-</label>
-
-<label class="option">
-<input type="radio" name="q5"> Understanding and support
-</label>
-
-
-
-<div class="question">
-6. Regular exercise improves:
-</div>
-
-<label class="option">
-<input type="radio" name="q6"> Mood and confidence
-</label>
-
-<label class="option">
-<input type="radio" name="q6"> Negative thinking
-</label>
-
-<label class="option">
-<input type="radio" name="q6"> Stress problems
-</label>
-
-<label class="option">
-<input type="radio" name="q6"> Physical and mental health
-</label>
-
-
-
-<div class="question">
-7. Gratitude means:
-</div>
-
-<label class="option">
-<input type="radio" name="q7"> Appreciating positive things
-</label>
-
-<label class="option">
-<input type="radio" name="q7"> Complaining always
-</label>
-
-<label class="option">
-<input type="radio" name="q7"> Ignoring happiness
-</label>
-
-<label class="option">
-<input type="radio" name="q7"> Feeling thankful
-</label>
-
-
-
-<div class="question">
-8. When feeling stressed, you should:
-</div>
-
-<label class="option">
-<input type="radio" name="q8"> Take deep breaths and relax
-</label>
-
-<label class="option">
-<input type="radio" name="q8"> Panic more
-</label>
-
-<label class="option">
-<input type="radio" name="q8"> Avoid help
-</label>
-
-<label class="option">
-<input type="radio" name="q8"> Practice relaxation techniques
-</label>
-
-
-
-<div class="question">
-9. Self-care includes:
-</div>
-
-<label class="option">
-<input type="radio" name="q9"> Taking care of your mind and body
-</label>
-
-<label class="option">
-<input type="radio" name="q9"> Ignoring health
-</label>
-
-<label class="option">
-<input type="radio" name="q9"> Overworking continuously
-</label>
-
-<label class="option">
-<input type="radio" name="q9"> Maintaining a healthy routine
-</label>
-
-
-
-<div class="question">
-10. If someone feels emotionally stressed, they should:
-</div>
-
-<label class="option">
-<input type="radio" name="q10"> Talk to someone they trust
-</label>
-
-<label class="option">
-<input type="radio" name="q10"> Hide feelings
-</label>
-
-<label class="option">
-<input type="radio" name="q10"> Give up
-</label>
-
-<label class="option">
-<input type="radio" name="q10"> Seek guidance when needed
-</label>
-
-
-
-<button onclick="submitQuiz()">
-Submit Quiz
-</button>
-
-
-</div>
-
-
-
-<div id="thankyou">
-
-<h1>🎉 Thank You!</h1>
+<h1>Your Ved AI – Mental Wellness &<br>Relationship Companion</h1>
 
 <p>
-
-Your quiz response has been submitted successfully. ✅
-
-<br><br>
-
-Thank you for choosing <b>Mood Mentor AI Assistant</b>. 💙
-
-<br><br>
-
-Your responses help us improve our AI-powered mental wellness support system and create a better experience for everyone.
-
-<br><br>
-
-🌱 Understanding your emotions is the first step towards a healthier and happier life.
-
-<br><br>
-
-💙 <b>Stay Happy • Stay Healthy • Stay Positive</b> 💙
-
-<br><br>
-
-✨ Mood Mentor AI Assistant — Your Companion for Emotional Wellness ✨
-
+Welcome to Your Ved AI! I'm here to listen, support, and help you navigate life's
+challenges. Whether you're looking for stress relief, relationship advice, or just
+someone to talk to, I'm here for you.
 </p>
 
+<p class="disclaimer">
+Disclaimer: Your Ved AI provides emotional support and wellness guidance.
+It is not a substitute for licensed mental health professionals,
+medical advice, or emergency services. If you are in crisis,
+please contact your local emergency services immediately.
+</p>
+
+<form>
+
+<div class="form-group">
+<label for="name">What is your name? *</label>
+<input type="text" id="name" placeholder="Enter your name">
 </div>
 
-
+<div class="form-group">
+<label for="feeling">How are you feeling today? *</label>
+<textarea id="feeling" placeholder="I'm feeling..."></textarea>
 </div>
 
+<div class="form-group">
+<label for="reason">What brings you here today?</label>
+<select id="reason">
+<option>Stress & Anxiety Support</option>
+<option>Relationship Guidance</option>
+<option>Depression Support</option>
+<option>Career Stress</option>
+<option>Family Issues</option>
+<option>Self Improvement</option>
+<option>Just Need Someone to Talk To</option>
+</select>
+</div>
 
+<button type="submit">Start Conversation</button>
 
-<script>
+</form>
 
-function submitQuiz(){
-
-document.getElementById("quiz").style.display="none";
-
-document.getElementById("thankyou").style.display="block";
-
-}
-
-</script>
-
+</div>
 
 </body>
 </html>
