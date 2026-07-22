@@ -1,192 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Ved AI Form</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:Arial, Helvetica, sans-serif;
-        }
+<title>Your Ved AI Mental Wellness Quiz</title>
 
-        body{
-            background:#f5f7fb;
-            padding:40px;
-        }
+<style>
 
-        .container{
-            max-width:850px;
-            margin:auto;
-            background:#fff;
-            padding:40px;
-            border-radius:12px;
-            box-shadow:0 5px 20px rgba(0,0,0,.1);
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
 
-        h1{
-            font-size:45px;
-            color:#222;
-            margin-bottom:25px;
-        }
+body{
+    background:linear-gradient(135deg,#dff6ff,#eadcff);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
 
-        p{
-            font-size:18px;
-            line-height:1.7;
-            color:#444;
-            margin-bottom:20px;
-        }
+.quiz-box{
+    background:white;
+    max-width:650px;
+    width:100%;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
 
-        .disclaimer{
-            font-style:italic;
-            color:#666;
-            margin-bottom:35px;
-        }
+h1{
+    text-align:center;
+    color:#4b4b9d;
+    margin-bottom:15px;
+}
 
-        .form-group{
-            margin-bottom:30px;
-        }
+p{
+    text-align:center;
+    margin-bottom:20px;
+    color:#555;
+}
 
-        label{
-            display:block;
-            font-size:28px;
-            font-weight:bold;
-            margin-bottom:12px;
-            color:#222;
-        }
+.question{
+    font-weight:bold;
+    margin-top:20px;
+    font-size:17px;
+}
 
-        input[type=text],
-        textarea{
-            width:100%;
-            padding:15px;
-            border:1px solid #ccc;
-            border-radius:8px;
-            font-size:18px;
-            outline:none;
-            transition:.3s;
-        }
+.option{
+    display:block;
+    background:#f2f5ff;
+    padding:12px;
+    margin:8px 0;
+    border-radius:10px;
+    cursor:pointer;
+}
 
-        input:focus,
-        textarea:focus{
-            border-color:#4CAF50;
-        }
+.option:hover{
+    background:#dbe7ff;
+}
 
-        textarea{
-            height:150px;
-            resize:vertical;
-        }
+button{
+    width:100%;
+    padding:14px;
+    margin-top:25px;
+    background:#4b4b9d;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    cursor:pointer;
+}
 
-        .options{
-            display:flex;
-            flex-wrap:wrap;
-            gap:15px;
-        }
+button:hover{
+    background:#333377;
+}
 
-        .option{
-            display:flex;
-            align-items:center;
-            gap:10px;
-            border:1px solid #ccc;
-            border-radius:8px;
-            padding:12px 18px;
-            cursor:pointer;
-            transition:.3s;
-            font-size:18px;
-        }
+#thankyou{
+    display:none;
+    text-align:center;
+    line-height:1.7;
+}
 
-        .option:hover{
-            background:#4CAF50;
-            color:white;
-        }
-
-        .option input{
-            accent-color:#4CAF50;
-        }
-
-        button{
-            margin-top:25px;
-            padding:15px 35px;
-            background:#4CAF50;
-            color:white;
-            border:none;
-            border-radius:8px;
-            font-size:20px;
-            cursor:pointer;
-        }
-
-        button:hover{
-            background:#388e3c;
-        }
-    </style>
+</style>
 
 </head>
 
 <body>
 
-<div class="container">
+<div class="quiz-box">
 
-<h1>Your Ved AI – Mental Wellness & Relationship Companion</h1>
+
+<div id="quiz">
+
+<h1>🧠 Your Ved AI Quiz</h1>
 
 <p>
-Welcome to Your Ved AI! I'm here to listen, support, and help you navigate life's
-challenges. Whether you're looking for stress relief, relationship advice, or just
-someone to talk to, I'm here for you.
+Test your knowledge about mental wellness, self-care,
+mindfulness and healthy relationships.
 </p>
 
-<p class="disclaimer">
-<strong>Disclaimer:</strong> Your Ved AI provides emotional support and wellness guidance.
-It is not a substitute for licensed mental health professionals, medical advice, or
-emergency services. If you are in crisis, contact your local emergency services immediately.
+
+<div class="question">
+1. Which activity helps reduce stress?
+</div>
+
+<label class="option">
+<input type="radio" name="q1"> Yoga and Meditation
+</label>
+
+<label class="option">
+<input type="radio" name="q1"> Ignoring emotions
+</label>
+
+<label class="option">
+<input type="radio" name="q1"> Staying awake all night
+</label>
+
+
+
+<div class="question">
+2. What is important for good mental health?
+</div>
+
+<label class="option">
+<input type="radio" name="q2"> Sharing feelings and seeking support
+</label>
+
+<label class="option">
+<input type="radio" name="q2"> Keeping problems inside
+</label>
+
+<label class="option">
+<input type="radio" name="q2"> Avoiding everyone
+</label>
+
+
+
+<div class="question">
+3. Healthy sleep helps in:
+</div>
+
+<label class="option">
+<input type="radio" name="q3"> Improving mood and focus
+</label>
+
+<label class="option">
+<input type="radio" name="q3"> Increasing stress
+</label>
+
+<label class="option">
+<input type="radio" name="q3"> Reducing energy
+</label>
+
+
+
+<div class="question">
+4. Mindfulness helps us to:
+</div>
+
+<label class="option">
+<input type="radio" name="q4"> Stay calm and focused
+</label>
+
+<label class="option">
+<input type="radio" name="q4"> Increase worry
+</label>
+
+<label class="option">
+<input type="radio" name="q4"> Avoid responsibilities
+</label>
+
+
+
+<div class="question">
+5. A healthy relationship requires:
+</div>
+
+<label class="option">
+<input type="radio" name="q5"> Trust and communication
+</label>
+
+<label class="option">
+<input type="radio" name="q5"> Anger and blame
+</label>
+
+<label class="option">
+<input type="radio" name="q5"> Lack of respect
+</label>
+
+
+
+<div class="question">
+6. Exercise helps improve:
+</div>
+
+<label class="option">
+<input type="radio" name="q6"> Mood and confidence
+</label>
+
+<label class="option">
+<input type="radio" name="q6"> Stress levels
+</label>
+
+<label class="option">
+<input type="radio" name="q6"> Negative thinking
+</label>
+
+
+
+<div class="question">
+7. Gratitude means:
+</div>
+
+<label class="option">
+<input type="radio" name="q7"> Appreciating positive things
+</label>
+
+<label class="option">
+<input type="radio" name="q7"> Complaining always
+</label>
+
+<label class="option">
+<input type="radio" name="q7"> Ignoring happiness
+</label>
+
+
+
+<div class="question">
+8. When feeling stressed, you should:
+</div>
+
+<label class="option">
+<input type="radio" name="q8"> Take deep breaths and relax
+</label>
+
+<label class="option">
+<input type="radio" name="q8"> Panic more
+</label>
+
+<label class="option">
+<input type="radio" name="q8"> Avoid help
+</label>
+
+
+
+<div class="question">
+9. Self-care includes:
+</div>
+
+<label class="option">
+<input type="radio" name="q9"> Taking care of your mind and body
+</label>
+
+<label class="option">
+<input type="radio" name="q9"> Ignoring health
+</label>
+
+<label class="option">
+<input type="radio" name="q9"> Overworking continuously
+</label>
+
+
+
+<div class="question">
+10. If someone feels emotionally stressed, they should:
+</div>
+
+<label class="option">
+<input type="radio" name="q10"> Talk to someone trusted
+</label>
+
+<label class="option">
+<input type="radio" name="q10"> Hide all feelings
+</label>
+
+<label class="option">
+<input type="radio" name="q10"> Give up
+</label>
+
+
+
+<button onclick="submitQuiz()">Submit Quiz</button>
+
+</div>
+
+
+
+<div id="thankyou">
+
+<h1>🎉 Thank You!</h1>
+
+<p>
+Your quiz response has been submitted successfully. ✅
+<br><br>
+
+Thank you for choosing <b>Your Ved AI</b>. 💙
+<br><br>
+
+Your responses help us improve our AI-powered
+mental wellness platform and provide better support
+for everyone.
+
+<br><br>
+
+🌱 Understanding your emotions is the first step
+towards a healthier and happier life.
+
+<br><br>
+
+💙 <b>Stay Happy • Stay Healthy • Stay Positive</b> 💙
+
+<br><br>
+
+✨ Your Ved AI — Your Companion for Mental Wellness ✨
+
 </p>
 
-<form>
-
-<div class="form-group">
-<label>What is your name? *</label>
-<input type="text" placeholder="Enter your name" required>
 </div>
 
-<div class="form-group">
-<label>How are you feeling today? *</label>
-<textarea placeholder="I'm feeling..." required></textarea>
-</div>
-
-<div class="form-group">
-<label>What brings you here today? *</label>
-
-<div class="options">
-
-<label class="option">
-<input type="radio" name="reason">
-Stress & Anxiety Support
-</label>
-
-<label class="option">
-<input type="radio" name="reason">
-Relationship Guidance
-</label>
-
-<label class="option">
-<input type="radio" name="reason">
-Personal Growth & Motivation
-</label>
-
-<label class="option">
-<input type="radio" name="reason">
-Just here to chat
-</label>
 
 </div>
-</div>
 
-<button type="submit">Start Conversation</button>
 
-</form>
 
-</div>
+<script>
+
+function submitQuiz(){
+
+document.getElementById("quiz").style.display="none";
+
+document.getElementById("thankyou").style.display="block";
+
+}
+
+</script>
+
 
 </body>
 </html>
