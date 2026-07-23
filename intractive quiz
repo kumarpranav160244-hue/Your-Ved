@@ -1,0 +1,63 @@
+let questions = [
+
+{
+q:"1. How often do you feel stressed or overwhelmed?",
+options:["Never","Sometimes","Often","Always"],
+score:[0,1,2,3]
+},
+
+{
+q:"2. How would you rate your sleep quality?",
+options:["Very Good","Good","Poor","Very Poor"],
+score:[0,1,2,3]
+},
+
+{
+q:"3. How often do you feel happy and positive?",
+options:["Every day","Often","Rarely","Never"],
+score:[0,1,2,3]
+},
+
+{
+q:"4. How often do you practice self-care activities?",
+options:["Daily","Sometimes","Rarely","Never"],
+score:[0,1,2,3]
+},
+
+{
+q:"5. Do you feel comfortable sharing your feelings with someone?",
+options:["Always","Sometimes","Rarely","Never"],
+score:[0,1,2,3]
+},
+
+{
+q:"6. How often do you feel anxious about your future?",
+options:["Never","Sometimes","Often","Always"],
+score:[0,1,2,3]
+},
+
+{
+q:"7. How well do you manage difficult situations?",
+options:["Very Well","Good","With Difficulty","I Struggle"],
+score:[0,1,2,3]
+},
+
+{
+q:"8. How often do you take time to relax or meditate?",
+options:["Daily","Sometimes","Rarely","Never"],
+score:[0,1,2,3]
+},
+
+{
+q:"9. How connected do you feel with your friends and family?",
+options:["Very Connected","Connected","A Little Connected","Alone"],
+score:[0,1,2,3]
+},
+
+{
+q:"10. How would you describe your current mental wellbeing?",
+options:["Excellent","Good","Needs Improvement","Very Difficult"],
+score:[0,1,2,3]
+}
+
+];
