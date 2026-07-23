@@ -1,63 +1,256 @@
-let questions = [
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Ved - Mental Wellness Quiz</title>
 
-{
-q:"1. How often do you feel stressed or overwhelmed?",
-options:["Never","Sometimes","Often","Always"],
-score:[0,1,2,3]
-},
-
-{
-q:"2. How would you rate your sleep quality?",
-options:["Very Good","Good","Poor","Very Poor"],
-score:[0,1,2,3]
-},
-
-{
-q:"3. How often do you feel happy and positive?",
-options:["Every day","Often","Rarely","Never"],
-score:[0,1,2,3]
-},
-
-{
-q:"4. How often do you practice self-care activities?",
-options:["Daily","Sometimes","Rarely","Never"],
-score:[0,1,2,3]
-},
-
-{
-q:"5. Do you feel comfortable sharing your feelings with someone?",
-options:["Always","Sometimes","Rarely","Never"],
-score:[0,1,2,3]
-},
-
-{
-q:"6. How often do you feel anxious about your future?",
-options:["Never","Sometimes","Often","Always"],
-score:[0,1,2,3]
-},
-
-{
-q:"7. How well do you manage difficult situations?",
-options:["Very Well","Good","With Difficulty","I Struggle"],
-score:[0,1,2,3]
-},
-
-{
-q:"8. How often do you take time to relax or meditate?",
-options:["Daily","Sometimes","Rarely","Never"],
-score:[0,1,2,3]
-},
-
-{
-q:"9. How connected do you feel with your friends and family?",
-options:["Very Connected","Connected","A Little Connected","Alone"],
-score:[0,1,2,3]
-},
-
-{
-q:"10. How would you describe your current mental wellbeing?",
-options:["Excellent","Good","Needs Improvement","Very Difficult"],
-score:[0,1,2,3]
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
 }
 
+body{
+    background:#eef8f2;
+    padding:30px;
+}
+
+.container{
+    max-width:850px;
+    margin:auto;
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+h1{
+    text-align:center;
+    color:#2E7D32;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#555;
+    margin-bottom:30px;
+}
+
+.question{
+    margin-bottom:30px;
+}
+
+.question h3{
+    margin-bottom:15px;
+    color:#222;
+}
+
+label{
+    display:block;
+    background:#f7f7f7;
+    padding:12px;
+    border-radius:8px;
+    margin:8px 0;
+    cursor:pointer;
+}
+
+label:hover{
+    background:#d9f5df;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    font-size:20px;
+    background:#2E7D32;
+    color:white;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1B5E20;
+}
+
+#result{
+    display:none;
+    margin-top:30px;
+    padding:25px;
+    border-radius:12px;
+    background:#E8F5E9;
+    text-align:center;
+}
+
+.score{
+    font-size:28px;
+    color:#2E7D32;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🧠 Your Ved Mental Wellness Quiz</h1>
+
+<p class="subtitle">
+Take this short quiz to understand your current mental wellness.
+</p>
+
+<form id="quizForm">
+
+<div class="question">
+<h3>1. How often do you feel stressed?</h3>
+<label><input type="radio" name="q1" value="0" required> Never</label>
+<label><input type="radio" name="q1" value="1"> Sometimes</label>
+<label><input type="radio" name="q1" value="2"> Often</label>
+<label><input type="radio" name="q1" value="3"> Always</label>
+</div>
+
+<div class="question">
+<h3>2. How well do you sleep?</h3>
+<label><input type="radio" name="q2" value="0" required> Very Well</label>
+<label><input type="radio" name="q2" value="1"> Good</label>
+<label><input type="radio" name="q2" value="2"> Poor</label>
+<label><input type="radio" name="q2" value="3"> Very Poor</label>
+</div>
+
+<div class="question">
+<h3>3. How often do you exercise?</h3>
+<label><input type="radio" name="q3" value="0" required> Daily</label>
+<label><input type="radio" name="q3" value="1"> 3–4 Days</label>
+<label><input type="radio" name="q3" value="2"> Once a Week</label>
+<label><input type="radio" name="q3" value="3"> Never</label>
+</div>
+
+<div class="question">
+<h3>4. Do you feel supported by friends or family?</h3>
+<label><input type="radio" name="q4" value="0" required> Always</label>
+<label><input type="radio" name="q4" value="1"> Mostly</label>
+<label><input type="radio" name="q4" value="2"> Rarely</label>
+<label><input type="radio" name="q4" value="3"> Never</label>
+</div>
+
+<div class="question">
+<h3>5. How often do you feel anxious?</h3>
+<label><input type="radio" name="q5" value="0" required> Never</label>
+<label><input type="radio" name="q5" value="1"> Sometimes</label>
+<label><input type="radio" name="q5" value="2"> Often</label>
+<label><input type="radio" name="q5" value="3"> Always</label>
+</div>
+
+<div class="question">
+<h3>6. Do you make time for relaxation?</h3>
+<label><input type="radio" name="q6" value="0" required> Daily</label>
+<label><input type="radio" name="q6" value="1"> Few Times a Week</label>
+<label><input type="radio" name="q6" value="2"> Rarely</label>
+<label><input type="radio" name="q6" value="3"> Never</label>
+</div>
+
+<div class="question">
+<h3>7. How confident do you feel about yourself?</h3>
+<label><input type="radio" name="q7" value="0" required> Very Confident</label>
+<label><input type="radio" name="q7" value="1"> Confident</label>
+<label><input type="radio" name="q7" value="2"> Unsure</label>
+<label><input type="radio" name="q7" value="3"> Not Confident</label>
+</div>
+
+<div class="question">
+<h3>8. How often do you smile or laugh?</h3>
+<label><input type="radio" name="q8" value="0" required> Every Day</label>
+<label><input type="radio" name="q8" value="1"> Often</label>
+<label><input type="radio" name="q8" value="2"> Rarely</label>
+<label><input type="radio" name="q8" value="3"> Never</label>
+</div>
+
+<div class="question">
+<h3>9. Can you manage your emotions well?</h3>
+<label><input type="radio" name="q9" value="0" required> Yes</label>
+<label><input type="radio" name="q9" value="1"> Most of the Time</label>
+<label><input type="radio" name="q9" value="2"> Sometimes</label>
+<label><input type="radio" name="q9" value="3"> No</label>
+</div>
+
+<div class="question">
+<h3>10. Overall, how do you feel today?</h3>
+<label><input type="radio" name="q10" value="0" required> Excellent</label>
+<label><input type="radio" name="q10" value="1"> Good</label>
+<label><input type="radio" name="q10" value="2"> Okay</label>
+<label><input type="radio" name="q10" value="3"> Not Good</label>
+</div>
+
+<button type="submit">Submit Quiz</button>
+
+</form>
+
+<div id="result">
+
+<h2>🎉 Thank You!</h2>
+
+<p>Your quiz has been submitted successfully.</p>
+
+<p class="score" id="score"></p>
+
+<p id="message"></p>
+
+<br>
+
+<p>
+Thank you for choosing <b>Your Ved</b>.<br>
+Remember, this quiz is only for awareness and does not replace professional mental health advice.
+</p>
+
+<h3 style="color:#2E7D32;">💚 Stay Happy • Stay Healthy • Stay Positive 💚</h3>
+
+</div>
+
+</div>
+
+<script>
+
+document.getElementById("quizForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+let total=0;
+
+for(let i=1;i<=10;i++){
+total+=parseInt(document.querySelector('input[name="q'+i+'"]:checked').value);
+}
+
+document.getElementById("quizForm").style.display="none";
+
+document.getElementById("result").style.display="block";
+
+document.getElementById("score").innerHTML="Your Wellness Score: "+(30-total)+"/30";
+
+let msg="";
+
+if(total<=8){
+msg="😊 Excellent! You appear to have healthy mental wellness habits. Keep taking care of yourself.";
+}
+else if(total<=16){
+msg="🙂 You're doing well, but adding more relaxation and self-care could help improve your well-being.";
+}
+else if(total<=24){
+msg="😌 You may be experiencing moderate stress. Consider talking to someone you trust and making time for self-care.";
+}
+else{
+msg="💙 It looks like you may be facing significant challenges. Consider reaching out to a trusted friend, family member, or a qualified mental health professional if you need support.";
+}
+
+document.getElementById("message").innerHTML=msg;
+
+});
+
+</script>
+
+</body>
+</html>
 ];
